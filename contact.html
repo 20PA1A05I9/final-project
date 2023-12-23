@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crop Recommendation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Crop Recommendation</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </head>
+  <style>
+		h1 {
+			color: mediumseagreen;
+			text-align: center;
+		}
+
+		.warning {
+			color: red;
+			font-weight: bold;
+			text-align: center;
+		}
+		.card{
+		margin-left:410px;
+		margin-top: 20px;
+		color: white;
+		}
+		.container{
+		background:#edf2f7;
+		font-weight: bold;
+		padding-bottom:10px;
+		border-radius: 15px;
+		}
+    /* *{
+	margin:0;
+	padding: 0;
+} */
+#wrapper{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	position: fixed;
+	/* top: 0;
+	left: 0; */
+	background: linear-gradient(-45deg,rgb(216, 216, 94),#ffe693);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.form{
+	width: 440px;
+	height: 65vh;
+	min-height: 450px;
+	border-radius: 10px;
+	box-shadow:  3px 3px 56px black;
+             /*-13px -13px 26px #306b68;*/
+}
+.form h2{
+	padding: 20px;
+	text-align: center;
+	color: black;
+}
+.form input,textarea{
+	border: none;
+	border-radius: 5px;
+	margin-left: 5%;
+	width: 80%;
+	padding: 5px 5%;
+	margin-top: 10px;
+	height: 40px;
+	color: white;
+	background: #55bdb8;
+}
+.click{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form button{
+	margin: 5%;
+	border: none;
+	background: transparent;
+	padding: 10px 20px;
+	box-shadow:  1px 1px 6px black;
+	border-radius: 5px;
+	color: black;
+  font-weight: 650;
+}
+::placeholder{
+  color: black;
+}
+	</style>
+  <body>
+  <!--=======================navbar=====================================================-->
+<div id="wrapper">
+  <form id="frm" name="myform" class="form" method="POST" autocomplete="on" action="https://formspree.io/f/myyqrrqz"onsubmit="return validateform()">
+    <h2>Contact US</h2>
+    <input type="text" name="name" placeholder="Name">
+    <input type="email" name="email" placeholder="Email Address">
+    <input type="number" name="phone" placeholder="Phone">
+    <input type="text" name="subject" placeholder="Subject">
+    <textarea name="body" placeholder="Type your message here..."></textarea>
+    <div class="click">
+      <button type="submit" name="submit">Submit</button>
+    </div>
+  </form>
+</div>
+    <script>
+       function validateform(){
+        var name=document.myform.name.value;
+        var email=document.myform.email.value;
+        var phone=document.myform.phone.value;
+        var subject=document.myform.subject.value;
+        var msg=document.myform.body.value;
+        if(name==null||name==""){
+          alert("Name can't be blank");  
+  return false; 
+        }
+        if(email==null||email==""){
+          alert("Email can't be blank");  
+  return false; 
+        }
+        if(phone==null||phone==""){
+          alert("Phone number can't be blank");  
+  return false; 
+        }
+        if(subject==null||subject==""){
+          alert("Subject can't be blank");  
+  return false; 
+        }
+        if(msg==null||msg==""){
+          alert("Message can't be blank");  
+  return false; 
+        }
+        return true;
+       }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js "
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3 "
+    crossorigin="anonymous "></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js "
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz "
+    crossorigin="anonymous "></script>
+  </body>
+
+</html>
